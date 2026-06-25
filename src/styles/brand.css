@@ -36,6 +36,9 @@
 	--sl-color-accent-low: #ffe4e6;
 	--sl-color-accent: #be123c;
 	--sl-color-accent-high: #881337;
+	/* Links, title, active nav — must be rose in light (the :root default is
+	   Midnight's cyan, which otherwise leaks into this theme). */
+	--sl-color-text-accent: #be123c;
 
 	--sl-color-white: #3a1f29;
 	--sl-color-gray-1: #4a2a35;
