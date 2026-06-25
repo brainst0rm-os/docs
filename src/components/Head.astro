@@ -1,5 +1,6 @@
 ---
 import Default from "@astrojs/starlight/components/Head.astro";
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <script is:inline>
@@ -15,7 +16,10 @@ import Default from "@astrojs/starlight/components/Head.astro";
 	})();
 </script>
 
-<Default><slot /></Default>
+<Default>
+	<slot />
+	<Analytics />
+</Default>
 
 <script>
 	import { init } from "@amplitude/analytics-browser";
