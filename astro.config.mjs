@@ -12,7 +12,9 @@ export default defineConfig({
 			description:
 				"Documentation for Brainstorm — the local-first, AI-native operating system for knowledge work.",
 			logo: {
-				src: "./src/assets/brandmark.svg",
+				// Pink mark in the Rose (light) theme, blue mark in Midnight (dark).
+				light: "./src/assets/brandmark.svg",
+				dark: "./src/assets/brandmark-midnight.svg",
 				alt: "Brainstorm",
 			},
 			favicon: "/favicon.svg",

@@ -79,7 +79,10 @@
 	--bs-header-shadow: 0 6px 24px rgba(58, 31, 41, 0.07);
 }
 
-.header {
+/* Starlight renders BOTH an outer `<header class="header">` and an inner
+   `<div class="header">`. Style only the outer bar — `.header` alone hits both
+   and double-stacks the background, border and shadow (two visible bars). */
+header.header {
 	background: var(--bs-header-bg);
 	backdrop-filter: blur(14px) saturate(150%);
 	-webkit-backdrop-filter: blur(14px) saturate(150%);
