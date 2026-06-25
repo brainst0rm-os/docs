@@ -1,0 +1,83 @@
+---
+import Default from "@astrojs/starlight/components/Footer.astro";
+
+const year = new Date().getFullYear();
+const repo = "https://github.com/brainst0rm-os/shell";
+---
+
+<Default><slot /></Default>
+
+<footer class="bs-footer">
+	<div class="bs-footer__top">
+		<div class="bs-footer__brand">
+			<span class="bs-footer__name">Brainstorm</span>
+			<p class="bs-footer__tagline">
+				A local-first, AI-native operating system for your knowledge work. Your data lives on your
+				machine — no account required.
+			</p>
+		</div>
+		<nav class="bs-footer__links" aria-label="Footer">
+			<a href="https://getbrainstorm.online">getbrainstorm.online</a>
+			<a href={repo} target="_blank" rel="noopener noreferrer">GitHub</a>
+		</nav>
+	</div>
+	<div class="bs-footer__meta">
+		<span>© {year} Brainstorm</span>
+		<a href={repo} target="_blank" rel="noopener noreferrer">Open source · AGPL-3.0</a>
+	</div>
+</footer>
+
+<style>
+	.bs-footer {
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid var(--sl-color-hairline);
+	}
+	.bs-footer__top {
+		display: flex;
+		justify-content: space-between;
+		gap: 2.5rem;
+		flex-wrap: wrap;
+	}
+	.bs-footer__brand {
+		max-width: 44ch;
+	}
+	.bs-footer__name {
+		font-weight: 600;
+		color: var(--sl-color-white);
+	}
+	.bs-footer__tagline {
+		margin: 0.4rem 0 0;
+		font-size: var(--sl-text-sm);
+		line-height: 1.5;
+		color: var(--sl-color-gray-3);
+	}
+	.bs-footer__links {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+		font-size: var(--sl-text-sm);
+	}
+	.bs-footer__links a,
+	.bs-footer__meta a {
+		color: var(--sl-color-gray-3);
+		text-decoration: none;
+	}
+	.bs-footer__links a:hover,
+	.bs-footer__meta a:hover {
+		color: var(--sl-color-text-accent);
+	}
+	.bs-footer__meta {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		flex-wrap: wrap;
+		margin-top: 1.75rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--sl-color-hairline);
+		font-size: var(--sl-text-xs);
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--sl-color-gray-4);
+	}
+</style>

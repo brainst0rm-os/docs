@@ -26,6 +26,8 @@ export default defineConfig({
 				SiteTitle: "./src/components/SiteTitle.astro",
 				// Sun/moon toggle matching the marketing site (not Starlight's dropdown).
 				ThemeSelect: "./src/components/ThemeSelect.astro",
+				// Branded footer matching the marketing site (below Starlight's page nav).
+				Footer: "./src/components/Footer.astro",
 			},
 			social: [
 				{
