@@ -1,12 +1,29 @@
-/* Brainstorm docs — Rose brand theme layered over Starlight tokens.
-   Only Starlight's own custom properties are overridden here; values mirror
-   the marketing site (getbrainstorm.online) Rose palette. */
+/* Brainstorm docs — two real product themes layered over Starlight tokens:
+   light = Rose (warm blush), dark = Midnight (cool navy/cyan). Values mirror
+   packages/tokens/src/themes.ts. */
 
+/* Dark theme = Midnight. Starlight applies its dark tokens on :root. */
 :root {
-	/* Rose accent — used for links, active nav, focus. */
-	--sl-color-accent-low: #50071c;
-	--sl-color-accent: #e11d48;
-	--sl-color-accent-high: #fecdd3;
+	--sl-color-accent-low: #0c2a40;
+	--sl-color-accent: #38bdf8;
+	--sl-color-accent-high: #bae6fd;
+	--sl-color-text-accent: #7dd3fc;
+
+	--sl-color-white: #e7eef9;
+	--sl-color-gray-1: #dbe4f2;
+	--sl-color-gray-2: #aebdd6;
+	--sl-color-gray-3: #7185a3;
+	--sl-color-gray-4: #44557a;
+	--sl-color-gray-5: #2a3656;
+	--sl-color-gray-6: #1a2440;
+	--sl-color-gray-7: #121a30;
+	--sl-color-black: #0a1020;
+
+	--sl-color-bg: #0a1020;
+	--sl-color-bg-nav: #121a30;
+	--sl-color-bg-sidebar: #121a30;
+	--sl-color-hairline: rgba(180, 200, 255, 0.08);
+	--sl-color-hairline-shade: rgba(180, 200, 255, 0.08);
 
 	/* Fonts — match the marketing site. Inter falls back to system UI. */
 	--sl-font: "Inter Variable", "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont,
@@ -51,8 +68,8 @@
    surface (so page content never ghosts through), a faint backdrop blur, a
    hairline border, and a soft drop shadow. */
 :root {
-	--bs-header-bg: rgba(22, 15, 18, 0.95);
-	--bs-header-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+	--bs-header-bg: rgba(10, 16, 32, 0.95);
+	--bs-header-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
 }
 :root[data-theme="light"] {
 	--bs-header-bg: rgba(253, 244, 246, 0.95);
@@ -71,9 +88,9 @@
    cohesive Rose treatment: a distinct elevated surface, softer corners, a
    larger rose icon tile, and a quiet hover lift. */
 :root {
-	--bs-card-bg: rgba(255, 255, 255, 0.035);
-	--bs-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-	--bs-card-shadow-hover: 0 16px 40px -18px rgba(0, 0, 0, 0.55);
+	--bs-card-bg: #121a30;
+	--bs-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+	--bs-card-shadow-hover: 0 16px 40px -18px rgba(0, 0, 0, 0.7);
 }
 :root[data-theme="light"] {
 	--bs-card-bg: #ffffff;

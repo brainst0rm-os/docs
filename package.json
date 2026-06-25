@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "^2.44.1",
     "@astrojs/starlight": "^0.41.1",
     "astro": "^7.0.2",
     "sharp": "^0.34.5",

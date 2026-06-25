@@ -1,0 +1,17 @@
+---
+import Default from "@astrojs/starlight/components/Head.astro";
+---
+
+<Default><slot /></Default>
+
+<script>
+	import { init } from "@amplitude/analytics-browser";
+
+	if (!window.__amplitudeInitialized) {
+		window.__amplitudeInitialized = true;
+		init("cca1e2687dc8b1388f4b33372a97fdaa", {
+			serverZone: "EU",
+			autocapture: true,
+		});
+	}
+</script>

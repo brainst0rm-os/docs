@@ -17,6 +17,10 @@ export default defineConfig({
 			},
 			favicon: "/favicon.svg",
 			customCss: ["./src/styles/brand.css"],
+			components: {
+				// Wrap the default <Head> to add Amplitude (same as the marketing site).
+				Head: "./src/components/Head.astro",
+			},
 			social: [
 				{
 					icon: "github",
