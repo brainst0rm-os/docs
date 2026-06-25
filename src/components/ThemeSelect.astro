@@ -1,0 +1,78 @@
+---
+// Replaces Starlight's Auto/Light/Dark dropdown with the marketing site's
+// sun/moon toggle, so the switcher matches getbrainstorm.online.
+---
+
+<button
+	class="bs-theme-toggle"
+	type="button"
+	aria-label="Toggle color theme"
+	title="Toggle theme"
+	data-bs-theme-toggle
+>
+	<svg class="ico ico-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+		<path
+			d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.7"
+			stroke-linejoin="round"></path>
+	</svg>
+	<svg class="ico ico-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+		<circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"></circle>
+		<path
+			d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.7"
+			stroke-linecap="round"></path>
+	</svg>
+</button>
+
+<style>
+	.bs-theme-toggle {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 34px;
+		height: 34px;
+		border-radius: 0.25rem;
+		color: var(--sl-color-gray-3);
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		transition:
+			color 0.2s ease,
+			background 0.2s ease;
+	}
+	.bs-theme-toggle:hover {
+		color: var(--sl-color-white);
+		background: var(--sl-color-gray-6);
+	}
+	.bs-theme-toggle .ico-sun {
+		display: none;
+	}
+	:global([data-theme="dark"]) .bs-theme-toggle .ico-sun {
+		display: block;
+	}
+	:global([data-theme="dark"]) .bs-theme-toggle .ico-moon {
+		display: none;
+	}
+</style>
+
+<script>
+	for (const btn of document.querySelectorAll<HTMLButtonElement>("[data-bs-theme-toggle]")) {
+		btn.addEventListener("click", () => {
+			const root = document.documentElement;
+			const next = root.dataset.theme === "dark" ? "light" : "dark";
+			root.dataset.theme = next;
+			try {
+				localStorage.setItem("starlight-theme", next);
+			} catch (_) {}
+			const dom = location.hostname.endsWith("getbrainstorm.online")
+				? "; domain=.getbrainstorm.online"
+				: "";
+			document.cookie = `bs-theme=${next}; path=/; max-age=31536000; samesite=lax${dom}`;
+		});
+	}
+</script>

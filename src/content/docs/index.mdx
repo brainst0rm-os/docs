@@ -18,24 +18,25 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { CardGrid } from '@astrojs/starlight/components';
+import GeoCard from '../../components/GeoCard.astro';
 
 ## Find your way around
 
 <CardGrid stagger>
-	<Card title="Start here" icon="open-book">
+	<GeoCard title="Start here" shape="tetra">
 		New to Brainstorm? [Read the overview](/start-here/what-is-brainstorm/), then
 		[install](/start-here/install/) and [run through the quickstart](/start-here/quickstart/).
-	</Card>
-	<Card title="Concepts" icon="setting">
+	</GeoCard>
+	<GeoCard title="Concepts" shape="diamond">
 		Understand [vaults](/concepts/vaults/), [apps and permissions](/concepts/apps-and-permissions/),
 		and how [local-first sync](/concepts/local-first-and-sync/) keeps your data yours.
-	</Card>
-	<Card title="Apps" icon="puzzle">
+	</GeoCard>
+	<GeoCard title="Apps" shape="ring">
 		Brainstorm ships nothing but apps — [Notes, Database, Files, Graph and more](/apps/).
-	</Card>
-	<Card title="For agents" icon="comment-alt">
+	</GeoCard>
+	<GeoCard title="For agents" shape="ico">
 		Every page has a Markdown twin. Point an agent at
 		[`/llms.txt`](/llms.txt) or [`/llms-full.txt`](/llms-full.txt).
-	</Card>
+	</GeoCard>
 </CardGrid>

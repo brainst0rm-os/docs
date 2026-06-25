@@ -24,6 +24,8 @@ export default defineConfig({
 				Head: "./src/components/Head.astro",
 				// Logo/title link back to the main product site, not the docs root.
 				SiteTitle: "./src/components/SiteTitle.astro",
+				// Sun/moon toggle matching the marketing site (not Starlight's dropdown).
+				ThemeSelect: "./src/components/ThemeSelect.astro",
 			},
 			social: [
 				{
