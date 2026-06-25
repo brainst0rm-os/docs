@@ -71,23 +71,21 @@
    surface (so page content never ghosts through), a faint backdrop blur, a
    hairline border, and a soft drop shadow. */
 :root {
-	--bs-header-bg: rgba(10, 16, 32, 0.95);
-	--bs-header-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+	--bs-header-bg: rgba(10, 16, 32, 0.6);
 }
 :root[data-theme="light"] {
-	--bs-header-bg: rgba(253, 244, 246, 0.95);
-	--bs-header-shadow: 0 6px 24px rgba(58, 31, 41, 0.07);
+	--bs-header-bg: rgba(253, 244, 246, 0.62);
 }
 
-/* Starlight renders BOTH an outer `<header class="header">` and an inner
-   `<div class="header">`. Style only the outer bar — `.header` alone hits both
-   and double-stacks the background, border and shadow (two visible bars). */
+/* Translucent glass header. Strong blur frosts content behind it so the page
+   reads through softly instead of an opaque bar. Style ONLY the outer
+   `<header>` — Starlight also renders an inner `<div class="header">`, and a
+   bare `.header` hits both and double-stacks the background + border. */
 header.header {
 	background: var(--bs-header-bg);
-	backdrop-filter: blur(14px) saturate(150%);
-	-webkit-backdrop-filter: blur(14px) saturate(150%);
+	backdrop-filter: blur(22px) saturate(180%);
+	-webkit-backdrop-filter: blur(22px) saturate(180%);
 	border-bottom: 1px solid var(--sl-color-hairline-shade);
-	box-shadow: var(--bs-header-shadow);
 }
 
 /* Splash CardGrid — drop Starlight's per-card multicolor chips for one
