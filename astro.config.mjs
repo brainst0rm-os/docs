@@ -20,6 +20,8 @@ export default defineConfig({
 			components: {
 				// Wrap the default <Head> to add Amplitude (same as the marketing site).
 				Head: "./src/components/Head.astro",
+				// Logo/title link back to the main product site, not the docs root.
+				SiteTitle: "./src/components/SiteTitle.astro",
 			},
 			social: [
 				{
