@@ -34,4 +34,6 @@ Static build deployed on Vercel to `docs.getbrainstorm.online`. Config in `verce
 
 ## License
 
-Documentation content © Brainstorm. See repository settings.
+Documentation content is licensed under [CC BY 4.0](LICENSE) — share and adapt
+with attribution to Brainstorm. Code samples in the docs are free to use without
+restriction.
