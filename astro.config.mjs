@@ -7,6 +7,11 @@ import starlightLlmsTxt from "starlight-llms-txt";
 export default defineConfig({
 	site: "https://docs.getbrainstorm.online",
 	integrations: [
+		// Suppress Starlight's bundled @astrojs/sitemap (which emits a
+		// sitemap-index.xml + chunked sitemap-N.xml). An integration already
+		// named "@astrojs/sitemap" makes Starlight skip its own; the single flat
+		// sitemap is served from src/pages/sitemap.xml.ts instead.
+		{ name: "@astrojs/sitemap", hooks: {} },
 		starlight({
 			title: "Brainstorm Docs",
 			description:
