@@ -46,7 +46,7 @@ export default defineConfig({
 					description:
 						"Brainstorm is a local-first, AI-native operating system for knowledge work. A desktop shell hosts sandboxed apps over your own data; every app and every agent only touches what you allow.",
 					details:
-						"These docs cover using Brainstorm: vaults, apps, objects, local-first sync, and the permission model. App-development docs land alongside the app-publishing pipeline.",
+						"These docs cover using Brainstorm (vaults, apps, objects, local-first sync, the permission model) and building on it (the app model, manifest, capabilities, SDK, and data layer).",
 				}),
 			],
 			sidebar: [
@@ -71,6 +71,18 @@ export default defineConfig({
 				{
 					label: "Apps",
 					items: [{ autogenerate: { directory: "apps" } }],
+				},
+				{
+					label: "Build",
+					items: [
+						{ label: "Overview", slug: "build/overview" },
+						{ label: "Your first app", slug: "build/your-first-app" },
+						{ label: "The manifest", slug: "build/the-manifest" },
+						{ label: "Capabilities", slug: "build/capabilities" },
+						{ label: "SDK & runtime", slug: "build/the-sdk" },
+						{ label: "Working with data", slug: "build/working-with-data" },
+						{ label: "Recipes & anti-patterns", slug: "build/recipes" },
+					],
 				},
 			],
 		}),
