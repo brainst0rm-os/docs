@@ -48,7 +48,7 @@ export default defineConfig({
 				{
 					icon: "github",
 					label: "GitHub",
-					href: "https://github.com/brainst0rm-os/shell",
+					href: "https://github.com/brainstorm-os/shell",
 				},
 			],
 			// Source lives in a private repo — no public "edit this page" link.

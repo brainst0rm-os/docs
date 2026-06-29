@@ -1,6 +1,6 @@
 # Brainstorm — Docs
 
-The documentation portal for [Brainstorm](https://github.com/brainst0rm-os/shell), the local-first, AI-native operating system for knowledge work — live at **[docs.getbrainstorm.online](https://docs.getbrainstorm.online)**.
+The documentation portal for [Brainstorm](https://github.com/brainstorm-os/shell), the local-first, AI-native operating system for knowledge work — live at **[docs.getbrainstorm.online](https://docs.getbrainstorm.online)**.
 
 Built with [Astro](https://astro.build) + [Starlight](https://starlight.astro.build). Every page also ships an agent-readable Markdown twin via [`starlight-llms-txt`](https://github.com/HiDeoo/starlight-llms-txt): see `/llms.txt`, `/llms-full.txt`, and the `.md` version of any page.
 
