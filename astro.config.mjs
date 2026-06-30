@@ -41,6 +41,9 @@ export default defineConfig({
 				SiteTitle: "./src/components/SiteTitle.astro",
 				// Sun/moon toggle matching the marketing site (not Starlight's dropdown).
 				ThemeSelect: "./src/components/ThemeSelect.astro",
+				// Splash hero restyled to the marketing-site hero (mono eyebrow +
+				// wireframe accents + corner marks); content stays from frontmatter.
+				Hero: "./src/components/Hero.astro",
 				// Branded footer matching the marketing site (below Starlight's page nav).
 				Footer: "./src/components/Footer.astro",
 			},
