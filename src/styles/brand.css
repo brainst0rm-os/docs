@@ -55,13 +55,21 @@
 	--sl-color-bg-sidebar: #fcedf1;
 }
 
-/* Brand mark in the header gets the rounded-square treatment. */
+/* Header brand mirrors getbrainstorm.online exactly: a 24px rounded-square
+   mark + a 16px dark-ink wordmark at weight 500 — NOT Starlight's full-height
+   logo, h4 size, weight 600, and rose-accent colour (which read as a totally
+   different header from the marketing site). --sl-color-white is the strong
+   ink that equals the marketing `--paper` token in both themes. */
+.site-title {
+	gap: 9px;
+	font-size: var(--sl-text-base);
+	font-weight: 500;
+	color: var(--sl-color-white);
+}
 .site-title img {
 	border-radius: 7px;
-}
-/* Wordmark weight matches the marketing site's 500, not Starlight's 600. */
-.site-title {
-	font-weight: 500;
+	height: 24px;
+	width: 24px;
 }
 
 /* Page background — the marketing site's soft vertical gradient (elevated at
@@ -161,10 +169,10 @@ body {
    surface (so page content never ghosts through), a faint backdrop blur, a
    hairline border, and a soft drop shadow. */
 :root {
-	--bs-header-bg: rgba(10, 16, 32, 0.6);
+	--bs-header-bg: rgba(10, 16, 32, 0.8);
 }
 :root[data-theme="light"] {
-	--bs-header-bg: rgba(253, 244, 246, 0.62);
+	--bs-header-bg: rgba(253, 244, 246, 0.8);
 }
 
 /* Translucent glass header. Strong blur frosts content behind it so the page
@@ -176,6 +184,7 @@ header.header {
 	backdrop-filter: blur(6px) saturate(180%);
 	-webkit-backdrop-filter: blur(6px) saturate(180%);
 	border-bottom: 1px solid var(--sl-color-hairline-shade);
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* Splash CardGrid — drop Starlight's per-card multicolor chips for one
