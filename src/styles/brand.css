@@ -59,12 +59,98 @@
 .site-title img {
 	border-radius: 7px;
 }
+/* Wordmark weight matches the marketing site's 500, not Starlight's 600. */
+.site-title {
+	font-weight: 500;
+}
 
-/* Hero call-to-action buttons inherit the rose accent gradient feel. */
-.hero a[data-variant="primary"] {
-	background: linear-gradient(180deg, #fb7185, #be123c);
+/* Page background — the marketing site's soft vertical gradient (elevated at
+   the top fading into the base surface), instead of a flat fill. */
+:root {
+	--bs-bg-top: #121a30;
+	--bs-bg-base: #0a1020;
+}
+:root[data-theme="light"] {
+	--bs-bg-top: #ffffff;
+	--bs-bg-base: #fdf4f6;
+}
+body {
+	background: linear-gradient(
+		180deg,
+		var(--bs-bg-top) 0%,
+		var(--bs-bg-base) 18%,
+		var(--bs-bg-base) 100%
+	);
+	background-attachment: fixed;
+}
+
+/* Headings — match the marketing site's refined weight (500) + tight tracking,
+   rather than Starlight's heavier default. */
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6),
+.content-panel h1,
+[data-page-title] {
+	font-weight: 500;
+	letter-spacing: -0.015em;
+}
+
+::selection {
+	background: var(--sl-color-accent);
+	color: var(--sl-color-black);
+}
+
+/* Call-to-action buttons — the marketing site's squared CTA treatment
+   (rounded-rect, accent fill + soft glow for primary, a glass ghost for the
+   secondary actions), replacing Starlight's pill buttons. Unlayered, so these
+   win over Starlight's `@layer starlight.components` defaults. */
+.sl-link-button {
+	border-radius: var(--bs-radius-2, 8px);
+	font-weight: 500;
+	letter-spacing: -0.01em;
+	transition:
+		background 0.2s ease,
+		border-color 0.2s ease,
+		box-shadow 0.2s ease,
+		color 0.2s ease,
+		transform 0.12s ease;
+}
+.sl-link-button:active {
+	transform: translateY(1px);
+}
+.sl-link-button.primary {
+	background: var(--sl-color-accent);
 	border-color: transparent;
 	color: #fff;
+	box-shadow: 0 6px 20px color-mix(in srgb, var(--sl-color-accent) 32%, transparent);
+}
+.sl-link-button.primary:hover {
+	background: var(--sl-color-accent-high);
+	color: #fff;
+	box-shadow: 0 10px 28px color-mix(in srgb, var(--sl-color-accent) 44%, transparent);
+}
+.sl-link-button.minimal {
+	padding-inline: 1.125rem;
+	border-color: var(--sl-color-hairline-shade);
+	background: color-mix(in srgb, var(--sl-color-gray-6) 50%, transparent);
+	color: var(--sl-color-white);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+}
+.sl-link-button.minimal:hover {
+	border-color: var(--sl-color-accent);
+	color: var(--sl-color-text-accent);
+	background: color-mix(in srgb, var(--sl-color-accent) 8%, transparent);
+}
+@media (min-width: 50rem) {
+	.sl-link-button.minimal {
+		padding-inline: 1.25rem;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.sl-link-button,
+	.sl-link-button:active {
+		transition: none;
+		transform: none;
+	}
 }
 
 /* Header — mirrors getbrainstorm.online's scrolled state: a near-solid blush
